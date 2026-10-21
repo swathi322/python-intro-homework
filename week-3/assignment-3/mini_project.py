@@ -20,9 +20,9 @@ day= input("Enter a day ").lower()
 time = input("Enter a time ").lower()
 if day == "monday" and time == "morning":
  print("Morning python class, great time to focus")
-elif day =="monday" and time =="afternoon":
+elif day =="monday" and time == "afternoon":
  print("Have a Lunch")
-elif day == "monday" and "evening":
+elif day == "monday" and time =="evening":
  print("Go for a walk")
 elif day == "thursday" and time == "morning":
  print("breakfast time")
