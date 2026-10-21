@@ -18,29 +18,29 @@
 a=10
 b=5
 #1
-print(not a>b and a<b)
+print(not 10>5 and 10<5)
 #a>b is 10>5 -->true ; a<b is 10<5 -->false :
 #not true and false --> as per the Operator Precedence first priority for "not" :
 #false and false --> false :
 
 #2
-print(a>b or a<b and a<b )
+print(20>10 or 20<10 and 20<10 )
 #a>b is 10>5 --> ture or a<b is 10<5 --> false and a<b is 10<5--> false :
 #True or False and False --> as per Operator Precedence we need to consider "and" equation then "or" :
 #false and false -->false ; true or false --> true :
 
 #3
-print(not (10>5))
+print(not (30>20))
 #not (10>5) --> true :
 #not true --> false :
 
 #4
-print(a == a and b != b)
+print(40 == 40 and 50 != 50)
 #a == a is 10 == 10 --> true ; and b != b is 5 != 5 -->false
 #true and false --> false
 
 #5
-print(not a>b or not a<b)
+print(not 30>10 or not 30<10)
 #a>b is 10>5 -->true ;  a<b is 10<5 -->false
 #not true --> false ; not false --> true
 #false or true --> true
