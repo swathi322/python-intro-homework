@@ -18,7 +18,7 @@ print(True or False and False)
 #which is true.
 
 #3
-print(not (10>5))
+print(not(5 > 3))
 #print(not (True))
 #10>5 evaluate to true.
 #Operator Precedence shows not,
@@ -26,7 +26,7 @@ print(not (10>5))
 #not true become false.
 
 #4
-print(10 == 10 and 5 != 5)
+print(10 == 10 and 4 != 4)
 #print(True and False)
 #10 == 10 evaluate to true.
 #5 != 5 evaluate to false.
