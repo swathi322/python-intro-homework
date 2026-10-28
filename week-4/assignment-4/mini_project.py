@@ -6,7 +6,7 @@ students = [
     {"name": "Priya",   "score": 95, "subject": "Data"},
     {"name": "Devon",   "score": 72, "subject": "Python"},
     {"name": "Mia",     "score": 83, "subject": "Web"},
-    {"name": "Eli",     "score": 79, "subject": "Data"}
+    {"name": "Eli",     "score": 79, "subject": "Data"},
 ]
 
 #highest score and the name
@@ -30,7 +30,8 @@ subjects = []
 for student in students:
     subjects.append(student["subject"])
     unique_subjects = set(subjects)
-print(f"unique_subjects:    {subjects}")
+#print(f"unique_subjects:    {subjects}")
+print(f"Subjects offered:  {unique_subjects}")
 
 #high scorers
 high_scores = []
