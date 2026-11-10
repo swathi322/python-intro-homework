@@ -21,11 +21,26 @@ while True:
   print("5. Quit")
 
   choice = int(input("pick an option (1 - 5): ").strip())
-
+  
   if choice == 1:
-    print(f"Minimum value from the list is: {sorted_numbers[0]} ")
+    if not numbers:
+      print("The list is empty")
+    else:
+      mini_value = numbers[0]
+      for num in numbers:
+        if num < mini_value:
+          mini_value = num  
+      print(f"Minimum value from the list is: {mini_value}")
   elif choice == 2:
-    print(f"Maximum value from the list is: {sorted_numbers[-1]} ")
+    if not numbers:
+      print("The list is empty")
+    else:
+      max_value = numbers[0]
+      for num in numbers:
+        if num > max_value:
+          max_value = num  
+      print(f"Maximum value from the list is: {max_value} ")
+
   elif choice == 3:
     def linear_search(data, target):
       for i in range(len(data)):
