@@ -21,9 +21,27 @@ while True:
   print("5. Quit")
 
   choice = int(input("pick an option (1 - 5): ").strip())
-
+  
   if choice == 1:
     if not numbers:
+      print("The list is empty")
+    else:
+      mini_value = numbers[0]
+      for num in numbers:
+        if num < mini_value:
+          mini_value = num  
+      print(f"Minimum value from the list is: {mini_value}")
+  elif choice == 2:
+    if not numbers:
+      print("The list is empty")
+    else:
+      max_value = numbers[0]
+      for num in numbers:
+        if num > max_value:
+          max_value = num  
+      print(f"Maximum value from the list is: {max_value} ")
+
+  elif choice == 3:
       print("The list is empty.")
     else:
       min_value = numbers[0]
