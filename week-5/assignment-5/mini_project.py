@@ -42,6 +42,26 @@ while True:
       print(f"Maximum value from the list is: {max_value} ")
 
   elif choice == 3:
+      print("The list is empty.")
+    else:
+      min_value = numbers[0]
+      for num in numbers:
+        if num < min_value:
+          min_value = num
+
+    print(f"Minimum value from the list is: {min_value} ")
+
+  elif choice == 2:
+   if not numbers:
+    print("The list is empty")
+   else:
+    max_value = numbers[0]
+    for num in numbers:
+      if num > max_value:
+        max_value = num
+    print(f"Maximum value from the list is: {max_value} ")
+
+  elif choice == 3: 
     def linear_search(data, target):
       for i in range(len(data)):
        if data[i] == target:
