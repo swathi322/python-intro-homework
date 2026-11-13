@@ -38,16 +38,14 @@ def search(numbers, target):
 #   print(f"{search} was not found in the list.")
 
 #4
-def bubble_sort(data):
-    numbers = [42, 17, 83, 5, 61, 29, 74, 8, 55, 93, 31, 66, 14, 47, 78, 3, 59, 22, 86, 40]
-    swapped = True
-    while swapped:
-        swapped = False
-        for i in range(len(data) - 1):
-            if data[i] > data[i + 1]:
-                data[i], data[i + 1] = data[i + 1], data[i]
-                swapped = True
-    return data
+def bubble_sort(numbers):
+    sorted_list = numbers.copy()  
+    n = len(sorted_list)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+          if sorted_list[j] > sorted_list[j + 1]:
+            sorted_list[j],sorted_list[j + 1] = sorted_list[j + 1], sorted_list[j]
+    return sorted_list
 #sorted_numbers = bubble_sort(numbers) # [3, 5, 8, 14, 17, 22, 29, 31, 40, 42, 47, 55, 59, 61, 66, 74, 78, 83, 86, 93]
 #print(f"Please find the sorted numbers: {sorted_numbers}")
 
