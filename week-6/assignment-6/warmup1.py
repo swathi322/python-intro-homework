@@ -1,6 +1,6 @@
-def gr(name, greeting = "Hello"):
+def greet(name, greeting = "Hello"):
     print(f"{greeting}, {name} ")
     
-gr("swathi")
-gr("Swathi", "Good morning")
-gr("Swathi", greeting = "Hello")
+greet("swathi")
+greet("Swathi", "Good morning")
+greet("Swathi", greeting = "Hello")

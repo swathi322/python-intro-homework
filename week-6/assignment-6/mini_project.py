@@ -24,9 +24,9 @@ def find_max(numbers):
 #print(f"Returned maxmum value from the list:  {result_max_value}")
 
 #3
-def linear_search(numbers, search):
+def search(numbers, target):
     for i in range(len(numbers)):
-     if numbers[i] == search:
+     if numbers[i] == target:
        return i
     return -1
 #search = int(input("Enter a number to search for: "))
@@ -39,6 +39,7 @@ def linear_search(numbers, search):
 
 #4
 def bubble_sort(data):
+    numbers = [42, 17, 83, 5, 61, 29, 74, 8, 55, 93, 31, 66, 14, 47, 78, 3, 59, 22, 86, 40]
     swapped = True
     while swapped:
         swapped = False
@@ -69,13 +70,13 @@ def main():
         elif choice == 2:
          print(f"Returned maxmum value from the list:  {find_max(numbers)}")
         elif choice == 3:
-           search = int(input("Enter the number to search for: "))
-           result = linear_search(numbers, search)
+           target = int(input("Enter the number to search for: "))
+           result = search(numbers, target)
            if result != -1:
             #print(f"found at index {index}")
-            print(f"Your serached number {search} is available in list at index value {result}.")
+            print(f"Your serached number {target} is available in list at index value {result}.")
            else:
-            print(f"{search} was not found in the list.")
+            print(f"{target} was not found in the list.")
         elif choice == 4:
          print(f"sorted numbers' {bubble_sort(numbers)}")
         elif choice == 5 :
