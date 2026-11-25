@@ -34,22 +34,11 @@ food_items = [item for item in records if item['category'] == 'Food']
 print(food_items)
 
 #Calculate the total amount spent on Food.
-#food_value = sum(item['amount'] for item in records)
 food_value = sum(item['amount'] for item in food_items)
 print(f"Total amount spent on Food: ${food_value:.2f}")
 
-#Write a report to food_report.txt with this structure
+#First line: Food Expense Report — generated [today's date as "Month DD, YYYY"]
 from datetime import datetime
 now = datetime.now()
-print(f"Today is {now.strftime("%B %d, %Y")}")
-#One line per food expense: [date]: $[amount]
-
-#One line per food expense: [date]: $[amount]
-with open("output.txt", "w")as file:
- for item in food_items:
-    file.write(f"{item ['date']}: ${item['amount']:.2f}\n")
-
-#Last line: Total: $[total to 2 decimal places]
-#item['amount'] = float(item['amount'])
-total_spent = sum(item['amount'] for item in value)
-print(f"Total:${total:.2f}")
+current_date = now.strftime("%B %d, %Y")
+print(f"Food Expense Report — generated: {current_date}")
