@@ -1,40 +1,55 @@
-import csv
-from datetime import datetime
 import os
+import csv
+print(os.getcwd())
 
 input_path = "../data/expenses.csv"
-output_path = "food_report.txt"
-file_path = "my_file.txt"
 
 #Use os.path.exists() to verify that ../data/expenses.csv exists before opening it. If it doesn't, print an error message and stop.
-if not os.path.exists(file_path):
-    print("File not found")
-   # print(f"Error: the file{file_path} does not exists.")
+if not os.path.exists(input_path):
+    print("File not found")    
+else:
+    print("File is available.")
 
- #Read ../data/expenses.csv into a list of dictionaries using csv.DictReader.
+#Read ../data/expenses.csv into a list of dictionaries using csv.DictReader.
 
-expenses =[]
-with open(input_path, mode="r", newline="", encoding="utf-8") as file:
-   reader = csv.DictReader(file)
-for raw in reader:
-  print(raw)
+with open(input_path, 'r') as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        print(row['date'], row['category'],row['description'],row['amount'])
+
 #Convert the amount field to float for each row.
+price = float(row['amount'])
+with open(input_path, 'r') as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        print(row['date'], row['category'],row['description'],{price})
 
-row["amount"] = float(row["amount"])
-expenses.append(row)
+#Filter the list to only rows where category is "Food".
+with open(input_path, 'r') as file:
+    records = list(csv.DictReader(file))
+for item in records:
+    item['amount'] = float(item['amount'])
 
-#filter the list to only rows where category is "Food".
-food_expenses = [row for row in expenses if row["category"] == "food"]
+food_items = [item for item in records if item['category'] == 'Food']
+print(food_items)
 
-#Calculate the total amount spent on Food
-total_food = sum(row["amount"] for row in food_expenses)
+#Calculate the total amount spent on Food.
+#food_value = sum(item['amount'] for item in records)
+food_value = sum(item['amount'] for item in food_items)
+print(f"Total amount spent on Food: ${food_value:.2f}")
 
 #Write a report to food_report.txt with this structure
-today_str = datetime.now().strftime("%B %d, %Y")
+from datetime import datetime
+now = datetime.now()
+print(f"Today is {now.strftime("%B %d, %Y")}")
+#One line per food expense: [date]: $[amount]
 
-with open("food_report.txt", mode="w", encoding="utf-8") as report:
-    report.write(f"Food expenses report - generated {today_str}\n")
-    for item in food_expenses:
-        report.write("f{item['date']}: ${item['amount']:.2f}\n")
-    report.write(f"Total:${total_food:.2f}\n")
-print("generated reporti in food_report.txt.")
+#One line per food expense: [date]: $[amount]
+with open("output.txt", "w")as file:
+ for item in food_items:
+    file.write(f"{item ['date']}: ${item['amount']:.2f}\n")
+
+#Last line: Total: $[total to 2 decimal places]
+#item['amount'] = float(item['amount'])
+total_spent = sum(item['amount'] for item in value)
+print(f"Total:${total:.2f}")
